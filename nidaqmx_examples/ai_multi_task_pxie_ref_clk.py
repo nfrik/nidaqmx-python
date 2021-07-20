@@ -6,8 +6,8 @@ pp = pprint.PrettyPrinter(indent=4)
 
 
 with nidaqmx.Task() as master_task, nidaqmx.Task() as slave_task:
-    master_task.ai_channels.add_ai_voltage_chan("/PXI1Slot3/ai0")
-    slave_task.ai_channels.add_ai_voltage_chan("/PXI1Slot7/ai0")
+    master_task.ai_channels.add_ai_voltage_chan("/AI/ai0")
+    slave_task.ai_channels.add_ai_voltage_chan("/AI/ai0")
 
     master_task.timing.ref_clk_src = "PXIe_Clk100"
     master_task.timing.ref_clk_rate = 100000000
